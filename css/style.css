@@ -1,0 +1,984 @@
+/* ============================================
+   RESET E CONFIGURAÇÕES GERAIS
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+}
+
+/* ============================================
+   HEADER E NAVEGAÇÃO PRINCIPAL
+   ============================================ */
+
+/* Header Fixo */
+header {
+    background-color: #2F9E41;
+    color: white;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.logo-container h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.logo-container h1 small {
+    font-size: 0.9rem;
+    font-weight: 300;
+    display: block;
+    color: #D7E087;
+}
+
+/* Menu de Navegação */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #D7E087;
+    color: #2F9E41;
+}
+
+/* Menu Superior Direito */
+.menu-superior {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-superior a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+}
+
+.instagram-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    transition: transform 0.3s;
+}
+
+.menu-superior a:hover .instagram-icon {
+    transform: scale(1.1);
+    fill: #D7E087;
+}
+
+.menu-superior a:hover span {
+    color: #D7E087;
+}
+
+/* ============================================
+   MAIN E LAYOUT PRINCIPAL
+   ============================================ */
+
+/* Main Content */
+main {
+    margin-top: 120px;
+    padding: 2rem;
+    min-height: calc(100vh - 270px);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Navegação Interna da Home */
+.nav-interna {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(47, 158, 65, 0.1);
+}
+
+.nav-interna ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.nav-interna ul li a {
+    color: #2F9E41;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.nav-interna ul li a:hover {
+    background-color: #D7E087;
+    color: #2F9E41;
+}
+
+/* Seções */
+section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+    animation: fadeIn 0.6s ease-out;
+}
+
+h2 {
+    color: #2F9E41;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border-bottom: 3px solid #D7E087;
+    padding-bottom: 0.5rem;
+}
+
+/* ============================================
+   COMPONENTES
+   ============================================ */
+
+/* Cards de Cursos */
+.cursos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.curso-card {
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    border: 1px solid #eee;
+}
+
+.curso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(47, 158, 65, 0.15);
+    border-color: #D7E087;
+}
+
+.curso-card h3 {
+    color: #2F9E41;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.curso-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.curso-card a {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background-color: #2F9E41;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    border: 1px solid #2F9E41;
+}
+
+.curso-card a:hover {
+    background-color: #CD181D;
+    border-color: #CD181D;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Tabela de Eventos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #2F9E41;
+    color: white;
+    font-weight: 500;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Container do Vídeo */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* Botão Topo */
+.btn-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #2F9E41;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 3px 15px rgba(47, 158, 65, 0.3);
+    transition: all 0.3s;
+    z-index: 999;
+}
+
+.btn-topo:hover {
+    background-color: #CD181D;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(205, 24, 29, 0.3);
+}
+
+.btn-topo svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* Footer */
+footer {
+    background-color: #2F9E41;
+    color: white;
+    padding: 2.5rem;
+    text-align: center;
+    line-height: 1.8;
+    margin-top: 3rem;
+}
+
+footer p {
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+footer p:last-child {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* ============================================
+   PÁGINAS DE CONTEÚDO
+   ============================================ */
+
+.conteudo-pagina {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.conteudo-pagina h1 {
+    color: #2F9E41;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.conteudo-pagina img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Áudio */
+audio {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-radius: 30px;
+}
+
+/* Listas */
+.lista-customizada {
+    margin: 1.2rem 0 1.2rem 2rem;
+}
+
+.lista-customizada li {
+    margin: 0.7rem 0;
+    color: #555;
+}
+
+.lista-customizada li strong {
+    color: #2F9E41;
+}
+
+/* Divs informativas */
+.info-box {
+    background-color: #f9f9f9;
+    border-left: 4px solid #2F9E41;
+    padding: 1.8rem;
+    margin: 1.8rem 0;
+    border-radius: 0 12px 12px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.info-box h2 {
+    color: #2F9E41;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid #D7E087;
+    padding-bottom: 0.5rem;
+}
+
+.info-box h3 {
+    color: #2F9E41;
+    margin: 1.2rem 0 0.8rem 0;
+    font-size: 1.2rem;
+}
+
+.info-box p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Links */
+a {
+    color: #2F9E41;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #CD181D;
+}
+
+/* Estilo para o link da biblioteca */
+.info-box a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background-color: #2F9E41;
+    color: white;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
+.info-box a:hover {
+    background-color: #CD181D;
+    color: white;
+}
+
+/* ============================================
+   FORMULÁRIOS
+   ============================================ */
+
+.form-inscricao, .form-contato, .form-login {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section h3 {
+    color: #2F9E41;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2F9E41;
+    box-shadow: 0 0 0 3px rgba(47, 158, 65, 0.1);
+}
+
+.form-group input[type="color"] {
+    width: 60px;
+    height: 40px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+/* Radio e Checkbox */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.radio-group label,
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-group input,
+.checkbox-group input {
+    width: auto;
+}
+
+/* Select */
+select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #2F9E41;
+    box-shadow: 0 0 0 3px rgba(47, 158, 65, 0.1);
+}
+
+/* Botões de Formulário */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-submit,
+.btn-reset {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-submit {
+    background-color: #2F9E41;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #CD181D;
+}
+
+.btn-reset {
+    background-color: #f0f0f0;
+    color: #666;
+}
+
+.btn-reset:hover {
+    background-color: #e0e0e0;
+}
+
+/* Ajuda e Validação */
+.form-help {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Validação HTML5 */
+input:invalid {
+    border-color: #CD181D;
+}
+
+input:valid {
+    border-color: #2F9E41;
+}
+
+.form-group input:focus:invalid {
+    border-color: #CD181D;
+}
+
+/* ============================================
+   LOGIN
+   ============================================ */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.login-box {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-box h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.login-links a {
+    color: #2F9E41;
+    text-decoration: none;
+}
+
+.login-links a:hover {
+    color: #CD181D;
+}
+
+.login-links span {
+    margin: 0 0.5rem;
+    color: #ccc;
+}
+
+/* ============================================
+   EVENTOS
+   ============================================ */
+
+/* Cards de informações dos eventos */
+.eventos-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+}
+
+.eventos-info h3 {
+    color: #2F9E41;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.evento-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+    border-left: 4px solid #2F9E41;
+}
+
+.evento-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.evento-card h4 {
+    color: #2F9E41;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.evento-card p {
+    margin: 0.5rem 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.evento-card p strong {
+    color: #333;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .logo-container {
+        margin-bottom: 0.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.3rem;
+        margin: 0.5rem 0;
+    }
+    
+    nav ul li a {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .menu-superior {
+        margin-top: 0.5rem;
+    }
+    
+    /* Main */
+    main {
+        margin-top: 200px;
+        padding: 1rem;
+    }
+    
+    /* Navegação Interna */
+    .nav-interna {
+        border-radius: 12px;
+    }
+    
+    .nav-interna ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    /* Vídeo */
+    .video-container iframe {
+        height: 250px;
+    }
+    
+    /* Botão Topo */
+    .btn-topo {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .btn-topo svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Títulos */
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .conteudo-pagina h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Formulários */
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .btn-submit, .btn-reset {
+        width: 100%;
+    }
+    
+    .radio-group, .checkbox-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* ============================================
+   SLIDESHOW
+   ============================================ */
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: 2rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.slides-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    visibility: hidden;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.slide-caption h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.slide-caption p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Botões de navegação */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(47, 158, 65, 0.7);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.slide-btn:hover {
+    background-color: #2F9E41;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* Indicadores (dots) */
+.dots-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background-color: #2F9E41;
+    width: 30px;
+    border-radius: 10px;
+}
+
+.dot:hover {
+    background-color: #D7E087;
+}
+
+/* Controles de reprodução */
+.slide-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.control-btn {
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.control-btn:hover {
+    background-color: #2F9E41;
+}
+
+/* Responsividade do Slideshow */
+@media (max-width: 768px) {
+    .slides-wrapper {
+        height: 300px;
+    }
+    
+    .slide-caption h3 {
+        font-size: 1rem;
+    }
+    
+    .slide-caption p {
+        font-size: 0.8rem;
+    }
+    
+    .slide-btn {
+        width: 35px;
+        height: 35px;
+        padding: 0.5rem;
+    }
+    
+    .prev {
+        left: 10px;
+    }
+    
+    .next {
+        right: 10px;
+    }
+    
+}
